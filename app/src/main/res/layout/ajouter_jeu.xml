@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:id="@+id/content">
+
+
+    <!-- Importation de notre Toolbar -->
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rechercher un jeu dans la base de données BoardGameGeek"
+        android:id="@+id/explication"
+
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint = "Nom du jeu"
+        app:layout_constraintTop_toBottomOf="@+id/explication"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+    <CheckBox
+        android:id="@+id/dejapossede"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Possedé"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@+id/dejajoue"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <CheckBox
+        android:id="@+id/veutposseder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Veut posséder"
+        app:layout_constraintBottom_toTopOf="@+id/dejajoue"
+        app:layout_constraintLeft_toRightOf="@+id/dejapossede"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <CheckBox
+        android:id="@+id/dejajoue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Joué"
+        android:checked="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ajouter"
+        />
+
+    <CheckBox
+        android:id="@+id/veutjouer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Veut jouer"
+        android:checked="false"
+        app:layout_constraintBottom_toTopOf="@+id/ajouter"
+        app:layout_constraintLeft_toRightOf="@+id/dejajoue"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+
+
+    <Button
+        android:id="@+id/ajouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="ajouter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <Button
+        android:id="@+id/infos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Plus d'infos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/ajouter"
+
+        />
+
+    <ListView
+        android:id="@+id/rechercheJeu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:choiceMode="singleChoice"
+        android:listSelector="@color/pressed_color"
+        app:layout_constraintBottom_toTopOf="@+id/veutposseder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

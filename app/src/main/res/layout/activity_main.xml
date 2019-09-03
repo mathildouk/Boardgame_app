@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Importation de notre Toolbar -->
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vos statistiques sur vos jeux:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:id="@+id/statistiquesjeux"
+        android:textStyle="bold|italic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statistiquesjeux"
+        android:id="@+id/nbjeuxpossedés"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nbjeuxpossedés"
+        android:id="@+id/nbjeuxveutpossedés"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nbjeuxveutpossedés"
+        android:id="@+id/nbjeuxjoués"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nbjeuxjoués"
+        android:id="@+id/nbjeuxveutjoues"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vos statistiques sur vos parties:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nbjeuxveutjoues"
+        android:id="@+id/statistiquesparties"
+        android:textStyle="bold|italic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/statistiquesparties"
+        android:id="@+id/statparties"/>
+
+
+    <Button
+        android:id="@+id/Jeux"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mes jeux"
+        app:layout_constraintTop_toBottomOf="@id/statparties"
+         />
+
+    <Button
+        android:id="@+id/Historique"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mon historique de parties"
+        app:layout_constraintTop_toBottomOf="@id/Jeux"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Source : BoardGameGeek"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/space"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

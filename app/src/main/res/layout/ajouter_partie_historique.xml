@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <!-- Importation de notre Toolbar -->
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rechercher un jeu parmis mes jeux déjà enregistrés"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:id="@+id/explication"
+        />
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/explication"
+        android:queryHint = "Nom du jeu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:actionViewClass="android.support.v7.widget.SearchView"
+        />
+
+    <ListView
+        android:id="@+id/rechercheJeu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/veutposseder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/victoire"
+        android:text="Victoire :"
+        app:layout_constraintTop_toBottomOf="@+id/rechercheJeu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+
+
+    <CheckBox
+        android:id="@+id/VictoireOui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oui"
+        android:checked="false"
+        app:layout_constraintTop_toBottomOf="@+id/victoire"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <CheckBox
+        android:id="@+id/VictoireEOui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Victoire Ecrasante"
+        android:checked="false"
+        app:layout_constraintTop_toBottomOf="@+id/VictoireOui"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/score"/>
+
+
+    <CheckBox
+        android:id="@+id/VictoireNon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Non"
+        android:checked="false"
+        app:layout_constraintTop_toBottomOf="@+id/victoire"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/VictoireOui"/>
+
+    <CheckBox
+        android:id="@+id/Egalite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Egalité"
+        android:checked="false"
+        app:layout_constraintTop_toBottomOf="@+id/victoire"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/VictoireNon"/>
+
+    <CheckBox
+        android:id="@+id/DefaiteHOUI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Défaite Humiliante"
+        android:checked="false"
+        app:layout_constraintTop_toBottomOf="@+id/VictoireNon"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/VictoireEOui"
+        app:layout_constraintBottom_toTopOf="@+id/score"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textscore"
+        android:text="Score :"
+        app:layout_constraintTop_toBottomOf="@+id/VictoireEOui"
+        />
+
+    <EditText
+        android:id="@+id/score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/textscore"
+
+    android:inputType="number"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textrq"
+        android:text="Remarque :"
+        app:layout_constraintTop_toBottomOf="@+id/score"
+        />
+
+    <EditText
+        android:id="@+id/remarque"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/textrq"
+        />
+
+
+    <Button
+        android:id="@+id/ajouter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="ajouter"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/date"
+        android:text="Date :"
+        app:layout_constraintTop_toBottomOf="@+id/remarque"
+        />
+
+    <DatePicker
+        android:id="@+id/simpleDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:datePickerMode="spinner"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

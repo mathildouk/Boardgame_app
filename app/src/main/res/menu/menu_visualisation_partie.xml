@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_activity_main_home"
+        android:icon="@drawable/ic_home_white_24dp"
+        app:showAsAction="ifRoom"
+        android:title="Retour Accueil">
+    </item>
+
+
+    <item
+        android:id="@+id/menu_activity_main_delete"
+        android:icon="@drawable/ic_delete_white_24dp"
+        app:showAsAction="ifRoom"
+        android:title="Supprimer Jeu">
+    </item>
+
+</menu>
